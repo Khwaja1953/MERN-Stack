@@ -1,0 +1,30 @@
+
+#abc{
+    background-color: pink;
+    color: green;
+}
+h1{
+    background-color:green
+    
+}
+.xyz{
+    background-color: red;
+}
+
+*{
+    background-color: yellow; 
+    
+}
+.rt, h4 {
+    background-color: violet;
+}
+nav .p2,h5,p1{
+    background-color:brown;
+}
+nav{
+    background-color:aqua
+}
+article > p{
+    color:brown
+
+}

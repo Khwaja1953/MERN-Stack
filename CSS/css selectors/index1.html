@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rbg{ background-color: red; }
+        .tgc{  color: green;  }
+        .fs{    font-size: x-large;
+            color: blue;}
+        span + span{ background-color: aqua;}
+        input[type="text"]{
+            background-color: green;
+        }
+        input[type="email"]{
+            background-color: aquamarine;
+        }
+        a:hover{
+            color: red;
+            font-size: xx-large;
+        }
+        p:hover{
+            background-color: blue;
+        }
+        a:visited{
+            /* background-color: pink; */
+            color: green;
+        }
+        .div > p:nth-child(2n){
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <P class="rbg fs">Hello</P>
+        <P class="tgc fs">How are you</P>
+        <P class="rbg tgc">i am fine</P>
+    </div>
+    <span>i am span</span>
+
+    <span>i am another span1111</span>
+    <p>i am paragraph between span</p>
+    <span>i am another span</span>
+    <span>i am another span33333</span>
+    <input type="text"><input type="email"><input type="text">
+    <a href="https://www.google.com" target="_blank">click here</a>
+    <a href="https://www.facebook.com" target="_blank">click here</a>
+    <div class="div">
+        <p>i am p1</p>
+        <p>i am p2</p>
+        <p>i am p3</p>
+        <p>i am p4</p>
+        <p>i am p5</p>
+        <p>i am p6</p>
+    </div>
+    
+</body>
+</html>
