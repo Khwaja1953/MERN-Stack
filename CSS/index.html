@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.scss">
+    <style>
+        /* .box{
+            border: 1px solid black;
+            width: 200px;
+            transition: width 2s ease-in-out 1s;            
+        }
+        .box:hover{
+            width: 400px;
+            
+        } */
+         /* @keyframes moveRight {
+  from { transform: translateX(0px); }
+  to { transform: translateX(200px); }
+} */
+
+    /* @keyframes background-color {
+        from { background-color: coral; }
+        to { background-color: lightblue; }
+    } */
+
+    @keyframes background-color {
+  0% { background-color: coral; }
+  50% { background-color: lightblue; }
+  100% { background-color: rgb(202, 205, 43); }
+}
+
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+  animation-name: background-color;
+  animation-duration: 2s;
+}
+
+    </style>
+</head>
+<body>
+    <div class="box">hey i am a div</div>
+    <button>hey</button>
+</body>
+</html>

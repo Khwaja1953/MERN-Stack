@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .logo{
+            color:white;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            height: 2.5em;
+            padding: 0px 5px;
+        }
+        .navbar{
+            list-style: none;
+            display: flex;
+            width: 70vw;
+            justify-content: space-around;
+            color: white;
+        }
+        .navbar >li{padding: 5px 8px;
+            border-bottom: 3px solid black;        
+        }
+        .navbar > li:hover{
+            scale: 1.2;
+            cursor: pointer;
+            background-color: rgb(58, 54, 54);
+            border-radius: 10px;
+            border-color: aqua;
+        }
+       
+        @media screen and (max-width: 600px) {
+            nav{display: flex;
+            flex-direction: column;
+            align-items: center;}
+            .navbar{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">company name</div>
+
+        <ul class="navbar">
+            <li>Home</li>
+            <li>profile</li>
+            <li>services</li>
+            <li>contact</li>
+            <li>About us</li>
+        </ul>
+    </nav>
+    <main></main>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display properties</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box>div,span{
+            /* display: block; */
+            /* display: inline; */
+            /* display: inline-block; */
+            /* display: none; */
+            
+            border: 1px solid;
+            /* width: 100px; */
+        }
+        .box{
+            /* display: grid; */
+            /* display: flex; */
+            /* display: inline-flex; */
+            /* display: inline-grid; */
+            display: none;
+            
+        }
+        ul{
+            display: flex;
+            list-style: none;
+            /* justify-content: space-between; */
+             /* justify-content: center; */
+            /* justify-content: end;
+            justify-content: start;
+            justify-content: flex-end; */ 
+            /* height: 40px;
+            border: 1px solid; */
+            /* align-items: center; */
+            /* align-items: flex-end; */
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>hey</div>
+        <div>hi</div>
+        <div>hello</div>
+        <div>ok</div>
+        <span>span1</span>
+        <span>span2</span>
+        <span>span3</span>
+    </div>
+     <div class="box">
+        <div>hey</div>
+        <div>hi</div>
+        <div>hello</div>
+        <div>ok</div>
+        <span>span1</span>
+        <span>span2</span>
+        <span>span3</span>
+    </div>
+    
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>Profile</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    
+</body>
+</html>

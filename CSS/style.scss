@@ -1,0 +1,14 @@
+$primary-color: #4CAF50;
+$font-stack: Arial, sans-serif;
+
+body {
+  font-family: $font-stack;
+  background-color: $primary-color;
+}
+
+button {
+  background-color: darken($primary-color, 10%);
+  color: white;
+  border: none;
+  padding: 10px;
+}

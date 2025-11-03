@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-evenly;
+            width: 70vw;
+            list-style: none;
+             background-color: black;
+                color: white;
+
+        }
+        .logo{
+             background-color: black;
+                color: white;
+        }
+          
+            
+            nav{
+                background-color: black;
+            }
+        /* @media screen  and (max-width: 600px){
+            nav{
+                display: grid;
+                justify-items: center;
+                justify-content: center;
+                background-color: blueviolet;
+            }
+            .logo{
+                background-color: brown;
+            }
+        }
+        @media screen and (min-width: 900px) {
+            .navbar{
+                background-color: black;
+                color: white;
+            }
+            .logo{
+                background-color: black;
+                color: white;
+            }
+            nav{
+                background-color: black;
+            }
+        } */
+        @media (min-width: 600px) and (max-width:900px){
+
+            .navbar{
+                background-color: red;
+                
+            }
+            nav{
+                display: block;
+                justify-content: center;
+                justify-items: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">ILS Srinagar</div>
+        <ul class="navbar">
+            <li>Home</li>
+            <li>Services</li>
+            <li>Contact</li>
+            <li>About</li>
+        </ul>
+    </nav>
+</body>
+</html>
