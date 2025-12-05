@@ -1,0 +1,16 @@
+ul{
+  display: flex;
+  justify-content: space-evenly;
+
+
+}
+li{
+  border: 1px solid;
+  padding: 5px;
+  color: black;
+  list-style: none;
+  text-decoration: none;
+}
+.red{
+  background-color: red;
+}

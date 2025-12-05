@@ -1,0 +1,33 @@
+.box{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 100vh;
+}
+.card{
+    border: 1px solid red;
+    padding: 25px;
+    
+    
+}
+.abc0{
+    background-color: yellow;
+}
+
+.abc1{
+    background-color: rgb(51, 255, 0);
+}
+.abc2{
+    background-color: rgb(255, 77, 0);
+}
+.muzamil{
+    background-color: purple;
+}
+.muneeb{
+    background-color: tomato;
+}
+.xyz{
+    background-color: blue;
+}

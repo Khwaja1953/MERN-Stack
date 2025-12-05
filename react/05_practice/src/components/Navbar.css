@@ -1,0 +1,48 @@
+.navbar{
+    display: flex;
+    justify-content:space-between;
+    text-decoration: none;
+    list-style: none;
+    width: 40vw;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    width: 100vw;
+}
+
+
+.togglebtn{
+    display: none;
+}
+
+
+.navbar {
+    display: flex !important;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .togglebtn{
+        display: block;
+    }
+    
+   
+    .navbar{
+        display: none !important;
+        flex-direction: column;
+    }
+    
+   
+    .navbar.show{
+        display: flex !important;
+        flex-direction: column;
+    }
+    
+    .container{
+        display: flex;
+        flex-direction:column;
+    }
+}

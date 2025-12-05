@@ -1,0 +1,106 @@
+src/app/store.js
+import { configureStore } from "@reduxjs/toolkit";
+import productReducer from "../features/productSlice";
+
+export const store = configureStore({
+  reducer: {
+    product: productReducer
+  }
+});
+
+
+
+src/features/productSlice.js
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  name: "Smart Watch",
+  price: 2499,
+  details: "Water resistant, Heart-rate monitor, Bluetooth connectivity"
+};
+
+const productSlice = createSlice({
+  name: "product",
+  initialState,
+  reducers: {}
+});
+
+export default productSlice.reducer;
+
+
+
+
+
+src/components/Home.jsx
+
+import React from "react";
+import { useSelector } from "react-redux";
+import Product from "./Product";
+
+export default function Home() {
+  const product = useSelector((state) => state.product);
+
+  return (
+    <div className="p-4">
+      <h2>🏠 Home Page</h2>
+      <Product product={product} />
+    </div>
+  );
+}
+
+
+src/components/Cart.jsx
+
+import React from "react";
+import { useSelector } from "react-redux";
+import Product from "./Product";
+
+export default function Cart() {
+  const product = useSelector((state) => state.product);
+
+  return (
+    <div className="p-4">
+      <h2>🛒 Cart Page</h2>
+      <Product product={product} />
+    </div>
+  );
+}
+
+
+
+src/components/Product.jsx
+
+import React from "react";
+
+export default function Product({ product }) {
+  return (
+    <div style={{ border: "1px solid gray", borderRadius: "10px", padding: "10px", marginTop: "10px" }}>
+      <h3>{product.name}</h3>
+      <p><strong>Price:</strong> ₹{product.price}</p>
+      <p><strong>Details:</strong> {product.details}</p>
+    </div>
+  );
+}
+
+
+
+📁 src/main.jsx
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
+import Home from "./components/Home";
+import Cart from "./components/Cart";
+
+const App = () => (
+  <Provider store={store}>
+    <div>
+      <h1>🛍️ My E-Commerce App</h1>
+      <Home />
+      <Cart />
+    </div>
+  </Provider>
+);
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
