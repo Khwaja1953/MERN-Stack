@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: aquamarine;
+        }
+        .p{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1">
+        hey i am a box
+        <p class="p">hey i am a paragraph inside box1</p  >
+    </div>
+    <div class="divbox box">
+        hey i am another box
+        <p>hey i am a paragraph inside box 2</p>
+        
+    </div>
+    <script>
+        alert("welcome to my page");
+        let x = confirm("Are you 18 years old");
+        if (x){
+            console.log("welcome to my webiste")
+        }
+        else{
+            console.log("sorry you are not eligible")
+        }
+        let box = document.getElementById("box1");
+        console.log("using textContent",box.textContent);
+        console.log("using inner text: ",box.innerText)
+        console.log("using inner html", box.innerHTML);
+        console.log("using outer html", box.outerHTML)
+        console.log(box)
+        let box2 = document.getElementsByClassName("box")
+        console.log(box2[1].textContent)
+        let p = document.getElementsByTagName("p")
+        console.log(p[1].textContent)
+    </script>
+</body>
+</html>

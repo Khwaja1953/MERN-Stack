@@ -5,10 +5,4 @@ const obj = {
     hobby: ["cricket", "chess"]
 }
 obj.phone = "1234567890"
-
-console.log(obj)
-console.log(obj.rollNo)
-obj.rollNo = 25
-console.log(obj)
-delete(obj.phone)
-console.log(obj)
+console.log(obj['name'])
