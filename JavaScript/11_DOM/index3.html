@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" id="box1">
+        hey i am a box
+        <p class="p">hey i am a paragraph inside box1</p>
+        <p>hey i am 2nd paragraph inside box1</p>
+        <div>hey i am a div inside box1</div>
+    </div>
+    <div class="divbox box">
+        hey i am another box
+        <p>hey i am a paragraph inside box 2</p>
+
+    </div>
+    <script>
+        let box = document.getElementById("box1")
+        console.log(box.children)
+        box.children[2].style.backgroundColor = "red"
+        console.log(box.childNodes);
+        console.log(box.lastChild)
+        console.log(box.lastElementChild)
+        console.log(box.children[1].previousSibling)
+        console.log(box.children[1].previousElementSibling)
+        console.log(box.children[1].nextSibling)
+        console.log(box.children[1].nextElementSibling);
+        console.log(box.children[2].nodeType)
+        console.log(box.children[2].previousSibling.nodeType)
+        let box2 = document.querySelector(".divbox")
+        console.log(box2.children[0].nodeType)
+        console.log(box2.children[0].nodeName)
+        console.log(box.children.length)
+        console.log(box.childElementCount)
+        console.log(box.children[0].hasChildNodes())
+        console.log(box.children[1].ownerDocument)
+    </script>
+</body>
+</html>

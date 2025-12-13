@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div class="box" id="box1">
+        hey i am a box
+        <p class="p">hey i am a paragraph inside box1</p>
+        <p>hey i am 2nd paragraph inside box1</p>
+        <div>hey i am a div inside box1</div>
+    </div>
+    <div class="divbox box">
+        hey i am another box
+        <p>hey i am a paragraph inside box 2</p>
+
+    </div>
+    <script>
+        let box = document.getElementById('box1');
+        box.children[0].innerText = "Hey i am a paragraph and i was modified";
+        let p = document.querySelectorAll('p');
+        let div = document.createElement('div')
+        div.innerText = `hey i am a div and i was inserted`
+        p[1].appendChild(div);
+        let a = document.createElement("a");
+        a.innerText = "click here";
+        box.appendChild(a)
+        box.lastElementChild.href = 'https://www.orderbyqr.in'
+        let img = document.createElement('img');
+        let box2 = document.getElementsByClassName("divbox")
+        console.log(box2[0])
+        box2[0].appendChild(img)
+        box2[0].lastElementChild.alt = "image not available"
+        box2[0].lastElementChild.src = "abc.png";
+        box2[0].firstChild.remove()
+
+    </script>
+</body>
+</html>

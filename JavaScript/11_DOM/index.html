@@ -25,6 +25,8 @@
     </div>
     <script>
         alert("welcome to my page");
+        let name = prompt("enter your name");
+        console.log("welcome " + name + " to my website");
         let x = confirm("Are you 18 years old");
         if (x){
             console.log("welcome to my webiste")
@@ -33,6 +35,7 @@
             console.log("sorry you are not eligible")
         }
         let box = document.getElementById("box1");
+    
         console.log("using textContent",box.textContent);
         console.log("using inner text: ",box.innerText)
         console.log("using inner html", box.innerHTML);
@@ -42,6 +45,7 @@
         console.log(box2[1].textContent)
         let p = document.getElementsByTagName("p")
         console.log(p[1].textContent)
+       console.log("child",box.nodeName)
     </script>
 </body>
 </html>
