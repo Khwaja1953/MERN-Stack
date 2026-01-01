@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function step1(call, x){
+             setTimeout(()=>{
+            console.log("A",x);
+            call()
+        },1000);
+
+        }
+        function step2(call,x){
+             setTimeout(()=>{
+            console.log("b",x)
+            call()
+        },1000);
+        }
+        function step3(call,x){
+             setTimeout(()=>{
+            console.log("c",x)
+        },1000);
+        }
+       step1(step2(step3(()=>{console.log("finished")},7),6),5)
+    </script>
+</body>
+</html>

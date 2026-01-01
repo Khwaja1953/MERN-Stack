@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .count{
+            padding-left: 50vw;
+            padding-top: 50vh;
+        }
+        .box{
+            padding-left: 45vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="count">0</div>
+    <div class="box">
+        <button class="sub">sub</button>
+        <button class="reset">reset</button>
+        <button class="add">add</button>
+
+    </div>
+    <script>
+        let count = document.querySelector('.count');
+
+        let add = document.querySelector('.add');
+        let sub = document.querySelector('.sub');
+        let reset = document.querySelector('.reset');
+
+        add.addEventListener('click',()=>{
+            let x = parseInt(count.innerText);
+            count.innerText = x+1;
+        });
+        reset.addEventListener('click',()=>{
+            count.innerText = 0;
+        });
+        sub.addEventListener('click',()=>{
+            let x = parseInt(count.innerText);
+            count.innerText = x - 1;
+        });
+
+    </script>
+</body>
+</html>

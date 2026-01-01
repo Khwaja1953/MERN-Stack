@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn1" onclick="handleclick()">click me</button>
+    <button class="btn2">click me</button>
+    <button class="btn3">click me</button>
+    <script>
+        let btn1 = document.querySelector('.btn1');
+        let btn2 = document.querySelector('.btn2');
+        let btn3 = document.querySelector('.btn3');
+        function handleclick(){
+            btn1.style.backgroundColor = 'red';
+        }
+
+        btn2.onclick = ()=>{
+            btn2.style.color = 'red';
+            alert("button 2 was clicked")
+        }
+
+        btn3.addEventListener('keypress',()=>{
+            btn3.style.fontSize = "32px"
+        })
+    </script>
+</body>
+</html>

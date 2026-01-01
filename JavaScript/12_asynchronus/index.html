@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        console.log("A")
+        function callback(){
+            console.log("B")
+        }
+
+        setTimeout(callback,5000);
+
+        console.log("C")
+
+        function divide(a,b,abc){
+            if (b == 0){
+                abc(new Error("can not divide by zero"), null)
+            }
+            else{
+
+                abc(null, a/b)
+            }
+        }
+
+        function abc(error, result){
+            if (error){
+                console.log(error)
+            }
+            else{
+                console.log(result)
+            }
+        }
+
+        console.log(divide(5,0,abc))
+
+    </script>
+</body>
+</html>

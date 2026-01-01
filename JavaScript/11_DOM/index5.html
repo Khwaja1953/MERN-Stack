@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">Hey i am a box</div>
+    <div>hey i am another div</div>
+    <button class="btn">clik me</button>
+    <script>
+        let box = document.querySelector('.box')
+       
+        let btn = document.querySelector('.btn')
+        btn.addEventListener('click', ()=>{
+             box.style.backgroundColor = 'yellow'
+        });
+        let box2 = document.querySelectorAll('div')
+        console.log(box2[1])
+        box2[1].addEventListener('mouseover',()=>{
+            box2[1].style.backgroundColor = 'red'
+        });
+        box2[1].addEventListener('mouseout',()=>{
+            box2[1].style.backgroundColor = 'white'
+        })
+    </script>
+</body>
+</html>

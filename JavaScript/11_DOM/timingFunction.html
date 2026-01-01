@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">hey i am a box</div>
+    <button class="btn">clic me</button>
+    <script>
+        let box = document.querySelector('.box');
+        function handleColor(){
+            box.style.backgroundColor = 'green';
+        }
+
+        let timeId = setTimeout(()=>{
+            box.style.backgroundColor = 'green';
+        },5000);
+
+        let btn = document.querySelector('.btn');
+        btn.addEventListener('click',()=>{
+            clearTimeout(timeId)
+        });
+
+        setTimeout((x,y)=>{
+            btn.innerText = x
+            btn.innerText += y
+        },7000,"hello world", 123)
+    </script>
+</body>
+</html>
