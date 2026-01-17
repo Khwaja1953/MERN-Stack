@@ -11,7 +11,7 @@ function App() {
   return (
     <>
     {/* <Section count={count}/> */}
-<createCount.Provider value={{count,setCount}}>
+<createCount.Provider value={{count,setCount}} >
     <Section/>
       <div>
         <a href="https://vite.dev" target="_blank">
