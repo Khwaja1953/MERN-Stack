@@ -1,0 +1,7 @@
+hello world
+this is my new line in file by append mode
+this is my new line in file by append mode
+this is my new line in file by append mode
+this is my new line in file by append mode
+this is my new line in file by append mode
+this is my new line in file by append mode

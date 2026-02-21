@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Messaging App</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; display: flex; height: 100vh; overflow: hidden; }
+        .sidebar { width: 300px; border-right: 1px solid #ddd; background: #f9f9f9; display: flex; flex-direction: column; }
+        .user-info { padding: 1rem; border-bottom: 1px solid #ddd; background: #fff; }
+        .users-list { flex: 1; overflow-y: auto; list-style: none; margin: 0; padding: 0; }
+        .users-list li { padding: 1rem; border-bottom: 1px solid #eee; cursor: pointer; transition: background 0.3s; }
+        .users-list li:hover { background: #eef; }
+        .users-list li.active { background: #007bff; color: #fff; }
+        .chat-area { flex: 1; display: flex; flex-direction: column; background: #fff; }
+        #chat-header { padding: 1rem; border-bottom: 1px solid #ddd; font-weight: bold; }
+        #messages { flex: 1; padding: 1rem; overflow-y: auto; display: flex; flex-direction: column; }
+        .message { margin-bottom: 0.5rem; padding: 0.5rem 1rem; border-radius: 8px; max-width: 70%; }
+        .sent { background: #007bff; color: #fff; align-self: flex-end; }
+        .received { background: #eee; color: #333; align-self: flex-start; }
+        .input-area { padding: 1rem; border-top: 1px solid #ddd; display: flex; }
+        #message-input { flex: 1; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+        #send-button { margin-left: 0.5rem; padding: 0.5rem 1rem; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        .logout-btn { color: red; text-decoration: none; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="user-info">
+            Welcome, <strong><%= user.username %></strong>
+            <br>
+            <a href="/logout" class="logout-btn">Logout</a>
+        </div>
+        <ul class="users-list" id="users-list">
+            <% users.forEach(otherUser => { %>
+                <li data-id="<%= otherUser._id %>" data-username="<%= otherUser.username %>">
+                    <%= otherUser.username %>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+    <div class="chat-area">
+        <div id="chat-header">Select a user to start chatting</div>
+        <div id="messages"></div>
+        <form class="input-area" id="chat-form" style="display: none;">
+            <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+            <button type="submit" id="send-button">Send</button>
+        </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const usersList = document.getElementById('users-list');
+        const chatHeader = document.getElementById('chat-header');
+        const messagesDiv = document.getElementById('messages');
+        const chatForm = document.getElementById('chat-form');
+        const messageInput = document.getElementById('message-input');
+        
+        let selectedUserId = null;
+        const currentUserId = '<%= user._id %>';
+
+        // Connect to socket with user ID
+        socket.emit('register', currentUserId);
+
+        usersList.addEventListener('click', (e) => {
+            const li = e.target.closest('li');
+            if (!li) return;
+
+            document.querySelectorAll('.users-list li').forEach(item => item.classList.remove('active'));
+            li.classList.add('active');
+
+            selectedUserId = li.dataset.id;
+            const username = li.dataset.username;
+            chatHeader.innerText = 'Chat with ' + username;
+            chatForm.style.display = 'flex';
+            messagesDiv.innerHTML = '';
+
+            // Load chat history
+            fetch('/chat-history/' + selectedUserId)
+                .then(res => res.json())
+                .then(messages => {
+                    messages.forEach(msg => appendMessage(msg));
+                    scrollToBottom();
+                });
+        });
+
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const message = messageInput.value.trim();
+            if (message && selectedUserId) {
+                const msgData = {
+                    senderId: currentUserId,
+                    receiverId: selectedUserId,
+                    message: message
+                };
+                socket.emit('private_message', msgData);
+                appendMessage({ sender: currentUserId, message: message });
+                messageInput.value = '';
+                scrollToBottom();
+            }
+        });
+
+        socket.on('receive_message', (msg) => {
+            if (msg.sender === selectedUserId) {
+                appendMessage(msg);
+                scrollToBottom();
+            } else {
+                // Optionally show a notification for other users
+                const userItem = document.querySelector(`li[data-id="${msg.sender}"]`);
+                if(userItem) {
+                    userItem.style.fontWeight = 'bold';
+                    userItem.innerHTML += ' (new message)';
+                }
+            }
+        });
+
+        function appendMessage(msg) {
+            const div = document.createElement('div');
+            div.classList.add('message');
+            div.classList.add(msg.sender === currentUserId ? 'sent' : 'received');
+            div.innerText = msg.message;
+            messagesDiv.appendChild(div);
+        }
+
+        function scrollToBottom() {
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    </script>
+</body>
+</html>
