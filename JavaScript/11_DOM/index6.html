@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>welcome</h3>
+    <div id="box">Hello world... <h3>i am h3</h3> <h3 style="display: none;">i am h2 with hidden properties</h3></div>
+    <div class="container">Hello world... how are you</div>
+    <p class="container">hey i am a paragraph</p>
+    <p class="container">hey i am a paragraph2</p>
+
+    <script>
+        // alert("welcome to our page...");
+        // let age = confirm("are you 18+");
+        // console.log(age);
+        // let name = prompt("Enter your name");
+        // console.log(name);
+        let doc = document;
+        console.log(doc);
+        const box = document.getElementById("box");
+        console.log(box);
+        let container = document.getElementsByClassName("container");
+        console.log(container);
+        console.log(container[0]);
+        let tagName = document.getElementsByTagName("div");
+        console.log(tagName[1])
+
+        console.log(box.textContent);
+        console.log(box.innerHTML);
+        console.log(box.innerText);
+        console.log(box.outerHTML);
+        
+        let qs = document.querySelector('p');
+        console.log(qs.textContent);
+        let qsa = document.querySelectorAll('p');
+        console.log(qsa);
+        let h3 = document.getElementById("box").querySelector('h3');
+        console.log(h3.textContent);
+    </script>
+</body>
+</html>

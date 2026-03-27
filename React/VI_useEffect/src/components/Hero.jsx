@@ -9,7 +9,6 @@ let response = "";
 
         const fetchData = async () => {
             response = await fetch("https://jsonplaceholder.typicode.com/posts");
-            // response = await JSON.parse(response);
             console.log(response);
         }
         fetchData();

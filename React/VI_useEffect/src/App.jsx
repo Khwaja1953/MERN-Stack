@@ -5,14 +5,19 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Card from './components/Card'
 import Hero from './components/Hero'
+import MainSection from './components/MainSection'
+import DataSection from './components/DataSection'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Card/>
-      <Hero />
+      {/* <Card/>
+      <Hero /> */}
+      <MainSection/>
+      <DataSection/>
+      <DataSection/>
                
     </>
   )
