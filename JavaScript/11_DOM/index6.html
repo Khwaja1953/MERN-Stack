@@ -11,6 +11,7 @@
     <div class="container">Hello world... how are you</div>
     <p class="container">hey i am a paragraph</p>
     <p class="container">hey i am a paragraph2</p>
+    <p>hey i am a paragraph 3</p>
 
     <script>
         // alert("welcome to our page...");
@@ -37,6 +38,9 @@
         console.log(qs.textContent);
         let qsa = document.querySelectorAll('p');
         console.log(qsa);
+        qsa.forEach((p)=>{
+            console.log(p.textContent);
+        })
         let h3 = document.getElementById("box").querySelector('h3');
         console.log(h3.textContent);
     </script>

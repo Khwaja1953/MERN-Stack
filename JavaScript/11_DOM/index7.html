@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Heading.....
+    <div id="box"><!-- comment  -->
+         <p>Hello world</p>
+         i am box
+         <p>Hello</p>
+         <span>i am span</span>
+         <div>i am div</div>
+    </div>
+    <br>
+    <div>i am sibling......</div>
+    <strong> </strong>
+
+    <script>
+        let doc = document.documentElement;
+        console.log(doc);
+        let box = document.getElementById("box");
+        console.log(box.firstChild);
+        console.log(box.firstElementChild);
+        console.log(box.parentNode);
+        console.log(box.parentElement);
+        console.log(box.nextSibling);
+        console.log(box.nextElementSibling);
+        console.log(box.children);
+        console.log(box.childNodes);
+        console.log(box.lastChild);
+        console.log(box.lastElementChild);
+        console.log(box.previousElementSibling);
+        console.log(box.previousSibling);
+        console.log(box.previousSibling.nodeType);
+        console.log(box.nextElementSibling.nodeType);
+        console.log(box.nextElementSibling.nodeName);
+        console.log(box.children.length);
+        console.log(document.querySelector("strong").hasChildNodes());
+        console.log(box.ownerDocument);
+    </script>
+</body>
+
+</html>
