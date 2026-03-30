@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document one</title>
+   
+   
+</head>
+<body onclick="console.log('body was clicked....')">
+    <div>
+        Hello world
+    </div>
+    <img src="https://tesft.img" alt="image not found">
+    <div style="background-color: green;" onclick="console.log('div was clicked')">
+        
+        <button>click me</button>
+        <button onclick="alert('hello world')">click me</button>
+    </div>
+
+    <script>
+        let title = document.querySelector('title');
+        console.log(title.textContent);
+        title.innerText = "Home";
+        console.log(title.textContent);
+
+        let heading = document.createElement("h1");
+        heading.innerText = "Welcome to our website";
+        document.body.appendChild(heading);
+
+        document.querySelector("img").src = "https://images.pexels.com/photos/29947326/pexels-photo-29947326.jpeg";
+
+        console.log(document.querySelector("img").height)
+
+        document.querySelector("img").height = "300";
+
+        document.getElementsByTagName("div")[0].remove();
+
+
+        let strong = document.createElement("strong");
+        strong.innerHTML = "<p>Hello world</p>";
+        document.body.appendChild(strong);
+        let btn = document.querySelector("button");
+        btn.addEventListener("click",(event)=>{
+            event.stopPropagation();
+        let style = document.createElement("style");
+        style.innerText = `.bg-red{background-color: red}`;
+        console.log(style)
+        document.querySelector("head").appendChild(style);
+        heading.className = "bg-red";
+
+        heading.style = "color: white";
+        })
+
+        let img = document.querySelector("img")
+        img.addEventListener("mouseover",()=>{
+            img.style = "scale: 1.5"
+        });
+         img.addEventListener("mouseout",()=>{
+            img.style = "scale: 1"
+        });
+    </script>
+</body>
+</html>
