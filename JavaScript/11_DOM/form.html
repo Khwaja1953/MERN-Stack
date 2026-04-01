@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+
+<body>
+    <h2>Contact Form</h2>
+    <form id="form">
+        <div>
+            <input type="text" name="name" id="name" placeholder="Enter your name">
+        </div>
+        <div>
+            <input type="text" name="phone" id="phone" placeholder="Enter your phone">
+        </div>
+        <div>
+            <input type="email" name="email" id="email" placeholder="Enter you email">
+        </div>
+        <div>
+            <textarea name="query" id="query" placeholder="Enter you Query"></textarea>
+        </div>
+        <div>
+            <button id="btn">submit</button>
+        </div>
+    </form>
+
+    <script>
+        let form = document.getElementById("form");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const data = {
+                name: document.getElementById("name").value,
+                phone: document.getElementById("phone").value,
+                email: document.getElementById("email").value,
+                query: document.getElementById("query").value
+            }
+            fetch("https://jsonplaceholder.typicode.com/posts", {
+                method: "post",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            }).then(res => res.json())
+                .then(res => { console.log(res) })
+                .catch(err => { console.log(err) });
+            document.getElementById("name").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("query").value = "";
+
+        })
+    </script>
+</body>
+
+</html>

@@ -13,11 +13,11 @@ function App() {
 
   return (
     <>
-      {/* <Card/>
-      <Hero /> */}
+      <Card/>
+      {/* <Hero />
       <MainSection/>
       <DataSection/>
-      <DataSection/>
+      <DataSection/> */}
                
     </>
   )

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>This is my form</h2>
+    <form id="myform">
+        <div>
+            <input type="text" name="name" id="name" placeholder="Enter your name">
+        </div>
+        <div>
+            <input type="text" name="address" id="address" placeholder="Enter your Address">
+        </div>
+        <div>
+            <button onclick="alert('hey world')" id="btn">submit</button>
+        </div>
+    </form>
+
+    <script>
+        let name = document.getElementById("name");
+        let address = document.getElementById("address");
+        let form = document.getElementById("myform");
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            console.log({name:name.value,address:address.value});
+            name.value = "";
+            address.value = "";
+        });
+
+        name.addEventListener("change",(e)=>{
+            console.log("name.value= ",name.value,"e.target.value=",e.target.value);
+        });
+
+        name.addEventListener("focus",()=>{
+            console.log("name is focused.....");
+        
+        });
+
+        name.addEventListener("blur",()=>{
+            console.log("name lost focus...")
+        });
+
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click",()=>{
+            alert("hello world")
+        });
+
+        document.getElementById("btn").addEventListener("click",()=>{
+            alert("hi world")
+        })
+
+    </script>
+</body>
+</html>

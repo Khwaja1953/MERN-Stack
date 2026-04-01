@@ -14,8 +14,10 @@ const App = () => {
   return (
     <div>
       <h1>Conditional Rendering...</h1>
-      {/* <Card name={"khwaja"} />
+      <Card name={"khwaja"} />
       <Card />
+
+      {/* ternary operator condition ? if condition was true : if condition was false  */}
       {
         isLogged ? <h2>welcome Back</h2> : <button onClick={() => { setIsLogged(true) }}>sign in</button>
       }
@@ -23,7 +25,7 @@ const App = () => {
         <div><button onClick={() => { setContactFrom(!contactForm) }}>{contactForm ? <>X</> : <>signup</>}</button></div>
         {contactForm && <Contact />}
 
-      </div> */}
+      </div>
 
       <div>
         <button onClick={()=>{setData(true); setLoading(true); generateData()}}>Load Data</button>
