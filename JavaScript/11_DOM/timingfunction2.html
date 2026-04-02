@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">hey i am a div with bg red</div>
+    <button id="btn">stop bg red color</button>
+
+    <script>
+        let box = document.getElementById("box");
+        let bg_red_id = setTimeout(()=>{
+            box.style = "background-color: red";
+
+        },5000);
+        console.log(bg_red_id);
+        document.getElementById("btn").addEventListener("click",()=>{
+            clearTimeout(bg_red_id);
+        })
+
+        setTimeout((name)=>{
+            console.log("hello...",name);
+        },3000,"saijdeep")
+    </script>
+</body>
+</html>

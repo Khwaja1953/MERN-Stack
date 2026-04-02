@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="box">0</h1>
+    <button id="btn1">start</button>
+    <button id="btn">stop</button>
+    <div>
+        The Time is <strong id="time"></strong>
+    </div>
+
+    <script>
+        let box = document.getElementById("box");
+        let btn = document.getElementById("btn");
+        let time = document.getElementById("time");
+        let intervalId;
+        btn1.addEventListener("click",()=>{
+            if (!intervalId){
+
+                intervalId = setInterval(()=>{
+                    let num = parseInt(box.innerText);
+                    box.innerText = num + 1;
+                },100);
+            }
+        })
+        btn.addEventListener("click",()=>{
+            clearInterval(intervalId);
+            intervalId = undefined;
+        });
+        
+        setInterval(()=>{
+        const now =new Date
+            time.innerText = now.toLocaleTimeString()
+        },1000);
+    </script>
+</body>
+</html>

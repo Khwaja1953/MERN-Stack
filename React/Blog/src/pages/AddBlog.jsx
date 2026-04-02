@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 
 const AddBlog = () => {
+    console.log("i am addblog page")
     const [data, setData] = useState({title:"", body: ""});
     const [file, setFile] = useState(null);
     const [message, setMessage] = useState();
@@ -11,7 +12,7 @@ const AddBlog = () => {
         const formData = new FormData();
         formData.append("title", data.title);
         formData.append("body", data.body);
-        formData.append("file", file);
+        formData.append("image", file);
 
 
         fetch("http://localhost:5000/blog/addBlog",{
@@ -20,8 +21,8 @@ const AddBlog = () => {
             
         })
         .then(res => res.json())
-        .then(res => {setMessage(res);setData({data:"",file:"",body:""})})
-        .catch(err => {setError(err)});
+        .then(res => {setMessage(res.message);setData({data:"",body:""})})
+        .catch(err => {setError(err.error)});
     }
   return (
     <div className='flex flex-col items-center p-10 gap-10'>

@@ -4,11 +4,12 @@ import Main from '../components/Main'
 import Footer from '../components/Footer'
 
 const Home = () => {
+  console.log("i am home page")
   return (
     <div>
-        <Navbar/>
+        
         <Main/>
-        <Footer />
+        
     </div>
   )
 }
