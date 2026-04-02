@@ -26,12 +26,13 @@ const Main = () => {
     <div>
       {
         loading ? <div> Loading Blogs.....</div>:
-        <div>
+        <div className='grid grid-cols-3 gap-10 p-20'>
           {data.map((blog)=>(
-            <div key={blog._id}>
-              <img src={`http://localhost:5000${blog.image}`} alt="error" />
+            <div key={blog._id} className='border p-10 rounded'>
+              <img className='h-[15vh]' src={`http://localhost:5000${blog.image}`} alt="error" />
               <h3>{blog.title}</h3>
               <p>{blog.body}</p>
+              <button className='border px-2 py-1 rounded cursor-pointer'>Read more....</button>
             </div>
           ))}
         </div>
