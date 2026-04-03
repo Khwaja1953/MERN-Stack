@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 const Navbar = () => {
-  console.log("i am navbar")
+  // console.log("i am navbar")
   return (
     <div className='flex bg-gray-400 h-[5vh] justify-between items-center px-36 sticky top-0 w-full'>
       <p>Blog App</p>

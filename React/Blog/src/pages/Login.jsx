@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
     const Navigate = useNavigate();
     const [error, setError] = useState();
-    console.log("i am login page")
+    // console.log("i am login page")
     const [data, setData] = useState({email:"",password:""});
     const handleSubmit = (e)=>{
         e.preventDefault();

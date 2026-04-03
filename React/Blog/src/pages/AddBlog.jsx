@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 
 const AddBlog = () => {
-    console.log("i am addblog page")
+    // console.log("i am addblog page")
     const [data, setData] = useState({title:"", body: ""});
     const [file, setFile] = useState(null);
     const [message, setMessage] = useState();

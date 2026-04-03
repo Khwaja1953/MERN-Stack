@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Get } from '../utils/api'
+import { useNavigate } from 'react-router-dom';
 
 const Main = () => {
   const [data, setData] = useState();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
+  const Navigate = useNavigate()
   useEffect(() => {
     // Get('/')
     //   .then(data => { 
@@ -16,7 +18,7 @@ const Main = () => {
     fetch("http://localhost:5000")
     .then(data => data.json())
     .then(data => { 
-        console.log(data);
+        // console.log(data);
         setData(data.blogs);
          setLoading(false)
          })
@@ -32,7 +34,7 @@ const Main = () => {
               <img className='h-[15vh]' src={`http://localhost:5000${blog.image}`} alt="error" />
               <h3>{blog.title}</h3>
               <p>{blog.body}</p>
-              <button className='border px-2 py-1 rounded cursor-pointer'>Read more....</button>
+              <button onClick={()=>{Navigate(`/blog/${blog._id}`)}} className='border px-2 py-1 rounded cursor-pointer'>Read more....</button>
             </div>
           ))}
         </div>
