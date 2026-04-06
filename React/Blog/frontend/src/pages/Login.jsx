@@ -19,9 +19,8 @@ const Login = () => {
         .then(res => res.json())
         .then(res => {
             setData({email: "",password:""});
-            console.log(res.token);
-            if (res.token){
-                localStorage.setItem("token",`Bearer ${res.token}`)
+            if (res?.token){
+                localStorage.setItem("token", res.token);
                 Navigate("/addBlog");
             }
             setError(res.error);

@@ -9,22 +9,31 @@ const AddBlog = () => {
     const [error, setError] = useState()
     const handleSubmit = (e)=>{
         e.preventDefault();
+        setMessage(null);
+        setError(null);
         const formData = new FormData();
         formData.append("title", data.title);
         formData.append("body", data.body);
         formData.append("image", file);
 
         const token = localStorage.getItem("token");
+
         fetch("http://localhost:5000/blog/addBlog",{
             method: "post",
-            headers: token ? {
-                Authorization: token
-            }: {},
+            headers: token ? { Authorization: `Bearer ${token}` } : {},
             body: formData
             
         })
         .then(res => res.json())
-        .then(res => {setMessage(res.message);setData({data:"",body:""})})
+        .then(res => {
+            if (res.error){
+                setError(res.error);
+                return;
+            }
+            setMessage(res.message);
+            setData({title:"",body:""});
+            setFile(null);
+        })
         .catch(err => {setError(err.error)});
     }
   return (

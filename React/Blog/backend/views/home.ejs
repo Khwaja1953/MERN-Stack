@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('head') %>
+    <title>Home</title>
+    <style>
+      #maindiv{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 50px;
+      }
+    </style>
+</head>
+
+<body>
+  <%- include('navbar') %>
+
+    <div id="maindiv" class="container grid grid-template-3">
+      <% if (locals.blogs) { blogs.forEach((blog)=>{ %>
+        <div class="card" style="width: 18rem;">
+          <img src="<%= blog.image %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= blog.title %></h5>
+            
+            <a href="/blog/readBlog/<%= blog._id %>" class="btn btn-primary">Read Blog</a>
+          </div>
+        </div>
+
+        <% }) } %>
+    </div>
+
+
+    <%- include('script') %>
+</body>
+
+</html>
