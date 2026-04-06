@@ -5,9 +5,13 @@ const Blog = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState();
   const [comments, setComments] = useState();
+  const [postComment, setPostComment] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [token,setToken] = useState();
+  const [message, setMessage] = useState();
   useEffect(() => {
+    setToken(localStorage.getItem("token")|| "")
     fetch(`http://localhost:5000/blog/readBlog/${id}`)
       .then(res => res.json())
       .then(res => { console.log(res);
@@ -19,7 +23,22 @@ const Blog = () => {
       .catch(err => { console.log(err);
         setError(true);
        })
-  }, [])
+  }, [message]);
+  const handleComment = (e)=>{
+    e.preventDefault();
+    console.log("default prevented")
+    fetch(`http://localhost:5000/blog/comments/${id}`,{
+      method: "post",
+      headers: token ? {
+                Authorization: token,
+                "Content-Type":"application/json"
+            }: {},
+            body: JSON.stringify({comment: postComment})
+    }).then(res=>res.json())
+    .then(res => {console.log(res); setPostComment("");setMessage(res.message)})
+    .catch(err=>{console.log(err)})
+    
+  }
   return (
     <div>
       {error ? <div>Something went wrong please try again later</div>:<div>
@@ -29,7 +48,7 @@ const Blog = () => {
           <img src={`http://localhost:5000${blog.image}`} alt="error" />
           <h2 className='text-4xl'>{blog.title}</h2>
           <pre>{blog.body}</pre>
-         
+         <p>{blog.createdBy.name}</p>
           <p>{blog.createdAt}</p>
         </div>
         <div>
@@ -45,7 +64,11 @@ const Blog = () => {
               ))
             }
             </div>}
-
+            {token.startsWith("Bearer")&& <form onSubmit={(e)=>{handleComment(e)}}>
+              <label htmlFor="comment">Post Your comment</label><br />
+              <textarea className='border rounded' name="comment" id="comment" value={postComment} onChange={(e)=>{setPostComment(e.target.value)}}></textarea>
+              <button>submit</button>
+              </form>}
         </div>
 
       </div>}

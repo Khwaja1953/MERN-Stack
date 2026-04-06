@@ -19,7 +19,9 @@ const Login = () => {
         .then(res => res.json())
         .then(res => {
             setData({email: "",password:""});
-            if (res.message){
+            console.log(res.token);
+            if (res.token){
+                localStorage.setItem("token",`Bearer ${res.token}`)
                 Navigate("/addBlog");
             }
             setError(res.error);

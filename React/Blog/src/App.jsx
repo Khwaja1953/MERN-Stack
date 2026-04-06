@@ -7,6 +7,8 @@ import {Routes, Route} from 'react-router-dom';
 import Footer from './components/Footer';
 import Blog from './pages/Blog';
 import Signup from './pages/Signup';
+import ProtectRoute from './utils/ProtectRoute';
+
 
 const App = () => {
 
@@ -15,7 +17,7 @@ const App = () => {
       <Navbar />
     <Routes>
     <Route path='/' element={<Home/>}/>
-    <Route path='/addBlog' element={<AddBlog/>} />
+    <Route path='/addBlog' element={<ProtectRoute><AddBlog/></ProtectRoute>} />
     <Route path='/login' element={<Login/>} />
     <Route path='/signup' element={<Signup/>}/>
     <Route path='/blog/:id' element={<Blog/>}/>

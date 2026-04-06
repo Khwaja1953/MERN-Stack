@@ -14,9 +14,12 @@ const AddBlog = () => {
         formData.append("body", data.body);
         formData.append("image", file);
 
-
+        const token = localStorage.getItem("token");
         fetch("http://localhost:5000/blog/addBlog",{
             method: "post",
+            headers: token ? {
+                Authorization: token
+            }: {},
             body: formData
             
         })
