@@ -3,23 +3,27 @@ class Animal {
         this.name = name;
     }
     sound(){
-        console.log(`${this.name} makes sound.....`)
+        console.log(`${this.name} makes sound....`)
     }
 }
 
 class Dog extends Animal{
-    constructor(name){
-        super().name = name
+    constructor(name,breed){
+        super(name);
+        this.breed = breed
     }
-    color(){
-        console.log("dogs are red")
+    sound(){
+        console.log(`${this.name} makes sound.....which is of breed ${this.breed}`)
+        super.sound()
     }
-    
 }
 
 let a = new Animal("Dog1");
-let d = new Dog("Dog2");
-a.sound()
+let d = new Dog("Dog2","germen");
 d.sound()
-d.color()
+a.sound()
+// d.sound()
+// d.color()
 // a.color()
+// let name = 'saijdeep'
+// let name = "muzamil"
