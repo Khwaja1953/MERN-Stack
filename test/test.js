@@ -1,17 +1,19 @@
-function createBankAccount(name,initbalance){
-    let balance = initbalance;
-    return {
-        name,
-        deposite(amount){
-            balance += amount
-        },
-        getBalance(){
-            return {name,balance};
-        }
-    }
+class Animal {
+  makeSound() {
+    console.log("Some generic sound");
+  }
 }
-let account = createBankAccount("khwaja",2000)
-account.deposite(1000);
-account.deposite(2000);
-console.log(account.balance);
-console.log(account.getBalance());
+
+class Dog extends Animal {
+  makeSound(name) {
+    console.log("Bark");
+  }
+}
+
+class Cat extends Dog {
+  makeSound(name,age) {
+    console.log("Meow");
+  }
+}
+let d = new Dog();
+d.makeSound("abc","sdf")
