@@ -1,0 +1,4 @@
+this is async file methodite methods
+this is new line
+this is new line
+this is new linethis is another line using promisesthis is another line using promisesthis is another line using promisesthis is await methodthis is await method

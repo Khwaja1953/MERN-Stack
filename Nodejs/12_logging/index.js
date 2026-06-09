@@ -22,9 +22,18 @@ app.get('/',(req, res) => {
   res.send('Hello World')
 })
 app.get('/profile/:username',(req,res)=>{
-    const {username} = req.params
-    logger.info(username)
-    res.send("<h1>welcome to profile</h1>")
+    try {
+        
+        if (Math.random()>0.5){
+            throw new Error("number is less than 0.5")
+        }
+        const {username} = req.params
+        logger.info(username)
+        res.send("<h1>welcome to profile</h1>")
+    } catch (error) {
+        logger.error(error);
+        return res.send(error)
+    }
 })
 
 app.listen(3000, () => {

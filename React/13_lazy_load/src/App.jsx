@@ -1,5 +1,6 @@
 import React from 'react'
 // import Section1 from './Component/Section1';
+//npm i  react-error-boundar react-router-dom
 import Section2 from './Component/Section2';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { Suspense } from 'react';

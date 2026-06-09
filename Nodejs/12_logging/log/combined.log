@@ -1,19 +1,54 @@
 {"level":"info","message":"hello world","service":"user-service"}
-{"level":"info","message":"ishfaq","service":"user-service"}
-{"level":"info","message":"::1 - - [13/Feb/2026:10:14:21 +0000] \"GET /profile/ishfaq HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36\"","service":"user-service"}
-{"level":"info","message":"::1 - - [13/Feb/2026:10:15:11 +0000] \"GET /home HTTP/1.1\" 404 143 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36\"","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 304 - - 5.412 ms","service":"user-service"}
 {"level":"info","message":"hello world","service":"user-service"}
-{"level":"info","message":"\u001b[0mGET / \u001b[36m304\u001b[0m 4.991 ms - -\u001b[0m","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
 {"level":"info","message":"hello world","service":"user-service"}
-{"level":"info","message":"::1 - - [13/Feb/2026:10:17:48 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36\"","service":"user-service"}
-{"level":"info","message":"::1 - - [13/Feb/2026:10:18:38 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36\"","service":"user-service"}
-{"level":"info","message":"::1 - - [13/Feb/2026:10:18:41 +0000] \"GET /jgjh HTTP/1.1\" 404 143 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36\"","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 304 - - 6.499 ms","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 304 - - 0.749 ms","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 304 - - 1.122 ms","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 304 - - 0.423 ms","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 304 - - 0.400 ms","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 304 - - 0.602 ms","service":"user-service"}
 {"level":"info","message":"hello world","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 304 - - 7.392 ms","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 500 1359 - 2.028 ms","service":"user-service"}
 {"level":"info","message":"hello world","service":"user-service"}
-{"level":"info","message":"GET / 304 - - 4.147 ms","service":"user-service"}
-{"level":"info","message":"hello world","service":"user-service"}
-{"level":"info","message":"hello world","service":"user-service"}
-{"level":"info","message":"hello world","service":"user-service"}
-{"level":"info","message":"hello world","service":"user-service"}
-{"level":"info","message":"hello world","service":"user-service"}
-{"level":"info","message":"GET / 304 - - 9.544 ms","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 200 42 - 5.126 ms","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 304 - - 3.562 ms","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 304 - - 1.227 ms","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 200 27 - 1.132 ms","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 200 42 - 1.848 ms","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 200 27 - 0.508 ms","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 304 - - 0.378 ms","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 304 - - 0.421 ms","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 200 42 - 0.533 ms","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 304 - - 0.652 ms","service":"user-service"}
+{"level":"info","message":"saijdeep","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 200 27 - 0.411 ms","service":"user-service"}
+{"level":"error","service":"user-service"}
+{"level":"info","message":"GET /profile/saijdeep 200 42 - 0.499 ms","service":"user-service"}
