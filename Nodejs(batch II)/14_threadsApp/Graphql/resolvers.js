@@ -1,8 +1,8 @@
 import { Query } from 'mongoose'
-import {handleUserRegister} from '../Controllers/userController.js'
+import {handleUserRegister, handleUserLogin} from '../Controllers/userController.js'
 const resolvers = {
 Query: {
-    getUser: ()=>{}
+    loginUser: handleUserLogin
 },
 Mutation: {
 setUser: handleUserRegister

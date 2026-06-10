@@ -6,10 +6,10 @@ const typeDefs = `
     password: String!
 }
     type Query {
-    getUser(email: String!): User
+    loginUser(email: String!, password: String!): String
     }
     type Mutation{
-    setUser(name: String!, email: String!, password: String): User
+    setUser(name: String!, email: String!, password: String!): Boolean
     
     }
 `
