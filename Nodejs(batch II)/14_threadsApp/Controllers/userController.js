@@ -41,3 +41,16 @@ export const handleUserLogin = async (_,args)=>{
 }
 
 
+
+export const handleGetUser = async (_,args,context)=>{
+
+    if (!context.user){
+        throw new Error("please login first");
+    }
+    const user = await User.findOne({email: context.user.email});
+
+    if (!user){
+        throw new Error("user not found...")
+    }
+    return user
+}

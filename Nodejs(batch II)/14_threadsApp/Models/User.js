@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { timeStamp } from "node:console";
 
 const userSchema =  mongoose.Schema({
     name: {type: String, required: true},
