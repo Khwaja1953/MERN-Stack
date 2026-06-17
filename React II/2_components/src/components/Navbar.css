@@ -1,0 +1,13 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 5vw;
+    align-items: center;
+    height: 5vh;
+}
+ul{
+    width: 70vw;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
